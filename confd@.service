@@ -11,7 +11,7 @@ Restart=always
 KillMode=none
 ExecStartPre=-/usr/bin/docker stop confd-%i
 ExecStartPre=-/usr/bin/docker rm confd-%i
-ExecStart=/usr/bin/docker run --rm -v /mnt/lun00/coreos00/confd/dev/wordpress:/etc/confd:rw -v /mnt/lun00/coreos00/wordpress/dev/:/php:rw --name=confd nicholasvmoore/docker-confd
+ExecStart=/usr/bin/docker run --rm -v /mnt/lun00/coreos00/confd/dev/wordpress:/etc/confd:rw -v /mnt/lun00/coreos00/wordpress/dev/:/php:rw --name=confd-%i nicholasvmoore/docker-confd
 ExecStop=/usr/bin/docker stop confd-%i
 
 [Install]
