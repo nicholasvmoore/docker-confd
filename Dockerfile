@@ -4,9 +4,8 @@
 
 FROM centos:7
 
-VOLUME ["/etc/confd"]
+VOLUME ["/etc/confd", "/php"]
 
-ENV ETCD=
 ENTRYPOINT ["/usr/bin/confd", "-node", "172.17.42.1:4001"]
 
 RUN /bin/localedef -v -c -i en_US -f UTF-8 en_US.UTF-8;\
